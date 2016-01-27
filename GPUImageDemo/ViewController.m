@@ -10,6 +10,7 @@
 
 #import "GPUImage.h"
 @interface ViewController ()
+@property (nonatomic, assign)UIImage *inputImage;
 
 @end
 
@@ -50,14 +51,31 @@
     //GPUImageToonFilter *disFilter = [[GPUImageToonFilter alloc] init];
 
     
-    UIImage *inputImage = [UIImage imageNamed:@"火影01.png"];
+    _inputImage = [UIImage imageNamed:@"火影01.png"];
+    //加载出来
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:_inputImage];
+    imageView.frame = CGRectMake(50,50,_inputImage.size.width ,_inputImage.size.height);
+    [self.view addSubview:imageView];
+    
+    
     //晕影，形成黑色圆形边缘，突出中间图像的效果
-    GPUImageVignetteFilter *disFilter = [[GPUImageVignetteFilter alloc] init];
+//    GPUImageSketchFilter *disFilter = [[GPUImageSketchFilter alloc] init];
+    
+    
+    
+    
+
+}
+- (IBAction)btnSketchAction:(id)sender {
+    
+    
+    GPUImageSketchFilter *disFilter = [[GPUImageSketchFilter alloc] init];
+    
     //设置要渲染的区域
-    [disFilter forceProcessingAtSize:inputImage.size];
+    [disFilter forceProcessingAtSize:_inputImage.size];
     [disFilter useNextFrameForImageCapture];
     //获取数据源
-    GPUImagePicture *stillImageSource = [[GPUImagePicture alloc]initWithImage:inputImage];
+    GPUImagePicture *stillImageSource = [[GPUImagePicture alloc]initWithImage:_inputImage];
     //添加上滤镜
     [stillImageSource addTarget:disFilter];
     //开始渲染
@@ -66,7 +84,48 @@
     UIImage *newImage = [disFilter imageFromCurrentFramebuffer];
     //加载出来
     UIImageView *imageView = [[UIImageView alloc] initWithImage:newImage];
-    imageView.frame = CGRectMake(50,50,inputImage.size.width ,inputImage.size.height);
+    imageView.frame = CGRectMake(50,50,_inputImage.size.width ,_inputImage.size.height);
+    [self.view addSubview:imageView];
+}
+- (IBAction)btnSepiaAction:(id)sender {
+    GPUImageSepiaFilter *disFilter = [[GPUImageSepiaFilter alloc] init];
+    
+    //设置要渲染的区域
+    [disFilter forceProcessingAtSize:_inputImage.size];
+    [disFilter useNextFrameForImageCapture];
+    //获取数据源
+    GPUImagePicture *stillImageSource = [[GPUImagePicture alloc]initWithImage:_inputImage];
+    //添加上滤镜
+    [stillImageSource addTarget:disFilter];
+    //开始渲染
+    [stillImageSource processImage];
+    //获取渲染后的图片
+    UIImage *newImage = [disFilter imageFromCurrentFramebuffer];
+    //加载出来
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:newImage];
+    imageView.frame = CGRectMake(50,50,_inputImage.size.width ,_inputImage.size.height);
+    [self.view addSubview:imageView];
+    
+    
+}
+- (IBAction)btnCustomAction:(id)sender {
+    
+    GPUImageFilter *customFilter = [[GPUImageFilter alloc] initWithFragmentShaderFromFile:@"GPUImageCustomFilter"];
+    
+    //设置要渲染的区域
+    [customFilter forceProcessingAtSize:_inputImage.size];
+    [customFilter useNextFrameForImageCapture];
+    //获取数据源
+    GPUImagePicture *stillImageSource = [[GPUImagePicture alloc]initWithImage:_inputImage];
+    //添加上滤镜
+    [stillImageSource addTarget:customFilter];
+    //开始渲染
+    [stillImageSource processImage];
+    //获取渲染后的图片
+    UIImage *newImage = [customFilter imageFromCurrentFramebuffer];
+    //加载出来
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:newImage];
+    imageView.frame = CGRectMake(50,50,_inputImage.size.width ,_inputImage.size.height);
     [self.view addSubview:imageView];
 }
 
