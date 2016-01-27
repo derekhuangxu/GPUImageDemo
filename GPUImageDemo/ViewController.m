@@ -19,51 +19,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-
-    
-    
-    
-    //创建一个亮度的滤镜
-    //    GPUImageBrightnessFilter *passthroughFilter = [[GPUImageBrightnessFilter alloc] init];
-    //    passthroughFilter.brightness = -0.5f;
-    //    //设置要渲染的区域
-    //    [passthroughFilter forceProcessingAtSize:inputImage.size];
-    //    [passthroughFilter useNextFrameForImageCapture];
-    //    //获取数据源
-    //    GPUImagePicture *stillImageSource = [[GPUImagePicture alloc]initWithImage:inputImage];
-    //    //添加上滤镜
-    //    [stillImageSource addTarget:passthroughFilter];
-    //    //开始渲染
-    //    [stillImageSource processImage];
-    //    //获取渲染后的图片
-    //    UIImage *newImage = [passthroughFilter imageFromCurrentFramebuffer];
-    //    //加载出来
-    //    UIImageView *imageView = [[UIImageView alloc] initWithImage:newImage];
-    //    imageView.frame = CGRectMake(0,0,inputImage.size.width ,inputImage.size.height);
-    //    [self.view addSubview:imageView];
-    
-    
-    //GPUImageStretchDistortionFilter *disFilter =[[GPUImageStretchDistortionFilter alloc] init];
-    //GPUImageBulgeDistortionFilter *disFilter = [[GPUImageBulgeDistortionFilter alloc] init];
-    //GPUImagePinchDistortionFilter *disFilter = [[GPUImagePinchDistortionFilter alloc] init];
-    //GPUImageGlassSphereFilter *disFilter = [[GPUImageGlassSphereFilter alloc] init];
-    //GPUImageSphereRefractionFilter *disFilter = [[GPUImageSphereRefractionFilter alloc] init];
-    //GPUImageToonFilter *disFilter = [[GPUImageToonFilter alloc] init];
-
     
     _inputImage = [UIImage imageNamed:@"火影01.png"];
     //加载出来
     UIImageView *imageView = [[UIImageView alloc] initWithImage:_inputImage];
     imageView.frame = CGRectMake(50,50,_inputImage.size.width ,_inputImage.size.height);
     [self.view addSubview:imageView];
-    
-    
-    //晕影，形成黑色圆形边缘，突出中间图像的效果
-//    GPUImageSketchFilter *disFilter = [[GPUImageSketchFilter alloc] init];
-    
-    
-    
-    
+
 
 }
 - (IBAction)btnSketchAction:(id)sender {
