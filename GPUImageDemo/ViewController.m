@@ -20,10 +20,10 @@
     [super viewDidLoad];
     
     
-    _inputImage = [UIImage imageNamed:@"火影01.png"];
+    _inputImage = [UIImage imageNamed:@"_starwars__doll.jpg"];
     //加载出来
     UIImageView *imageView = [[UIImageView alloc] initWithImage:_inputImage];
-    imageView.frame = CGRectMake(50,50,_inputImage.size.width ,_inputImage.size.height);
+    imageView.frame = CGRectMake(30,100,320,200);
     [self.view addSubview:imageView];
 
 
@@ -46,7 +46,7 @@
     UIImage *newImage = [disFilter imageFromCurrentFramebuffer];
     //加载出来
     UIImageView *imageView = [[UIImageView alloc] initWithImage:newImage];
-    imageView.frame = CGRectMake(50,50,_inputImage.size.width ,_inputImage.size.height);
+    imageView.frame = CGRectMake(30,100,320,200);
     [self.view addSubview:imageView];
 }
 - (IBAction)btnSepiaAction:(id)sender {
@@ -65,7 +65,7 @@
     UIImage *newImage = [disFilter imageFromCurrentFramebuffer];
     //加载出来
     UIImageView *imageView = [[UIImageView alloc] initWithImage:newImage];
-    imageView.frame = CGRectMake(50,50,_inputImage.size.width ,_inputImage.size.height);
+    imageView.frame = CGRectMake(30,100,320,200);
     [self.view addSubview:imageView];
     
     
@@ -87,7 +87,7 @@
     UIImage *newImage = [customFilter imageFromCurrentFramebuffer];
     //加载出来
     UIImageView *imageView = [[UIImageView alloc] initWithImage:newImage];
-    imageView.frame = CGRectMake(50,50,_inputImage.size.width ,_inputImage.size.height);
+    imageView.frame = CGRectMake(30,100,320,200);
     [self.view addSubview:imageView];
 }
 

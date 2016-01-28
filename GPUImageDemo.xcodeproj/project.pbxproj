@@ -23,6 +23,7 @@
 		658225EB1C5869D7003D7E97 /* 火影01.png in Resources */ = {isa = PBXBuildFile; fileRef = 658225EA1C5869D7003D7E97 /* 火影01.png */; };
 		658228C81C5892D7003D7E97 /* libGPUImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 658228C71C5892D7003D7E97 /* libGPUImage.a */; };
 		658228D21C58C122003D7E97 /* GPUImageCustomFilter.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 658228D11C58C122003D7E97 /* GPUImageCustomFilter.fsh */; };
+		658228D41C59ED41003D7E97 /* _starwars__doll.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 658228D31C59ED41003D7E97 /* _starwars__doll.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -241,6 +242,7 @@
 		658228C51C5892D7003D7E97 /* GPUImageZoomBlurFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPUImageZoomBlurFilter.h; sourceTree = "<group>"; };
 		658228C71C5892D7003D7E97 /* libGPUImage.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGPUImage.a; sourceTree = "<group>"; };
 		658228D11C58C122003D7E97 /* GPUImageCustomFilter.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = GPUImageCustomFilter.fsh; sourceTree = "<group>"; };
+		658228D31C59ED41003D7E97 /* _starwars__doll.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = _starwars__doll.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -303,6 +305,7 @@
 		658223851C576A66003D7E97 /* GPUImageDemo */ = {
 			isa = PBXGroup;
 			children = (
+				658228D31C59ED41003D7E97 /* _starwars__doll.jpg */,
 				658228D11C58C122003D7E97 /* GPUImageCustomFilter.fsh */,
 				658228181C5892D6003D7E97 /* include */,
 				658228C61C5892D7003D7E97 /* lib */,
@@ -642,6 +645,7 @@
 				658223931C576A66003D7E97 /* Assets.xcassets in Resources */,
 				658223911C576A66003D7E97 /* Main.storyboard in Resources */,
 				658225EB1C5869D7003D7E97 /* 火影01.png in Resources */,
+				658228D41C59ED41003D7E97 /* _starwars__doll.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
